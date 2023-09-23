@@ -1,21 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamGamesResponse } from '../model/teamgame.model';
 import { FootballService } from '../services/football.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-team-game',
   templateUrl: './team-game.component.html',
   styleUrls: ['./team-game.component.css'],
 })
-export class TeamGameComponent implements OnInit {
+export class TeamGameComponent implements OnInit, OnDestroy {
   teamName: string | null = null;
   fixtureTeamData!: TeamGamesResponse; // Define the data structure for team results
+  private fixtureTeamDataSubscription: Subscription | undefined;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private fbServiceApi: FootballService
   ) {}
+
+  ngOnDestroy(): void {
+    // Unsubscribe to prevent memory leaks
+    if (this.fixtureTeamDataSubscription) {
+      this.fixtureTeamDataSubscription.unsubscribe();
+    }
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
@@ -37,7 +46,7 @@ export class TeamGameComponent implements OnInit {
 
       // Fetch and display last 10 game results as explained in the previous answer
       this.teamName = teamName;
-      this.fbServiceApi
+      this.fixtureTeamDataSubscription = this.fbServiceApi
         .getTeamGameDetails(league, season, teamId)
         .subscribe((data) => {
           // Handle the response here.

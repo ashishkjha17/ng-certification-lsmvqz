@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { League } from '../model/standings.model';
 import { FootballService } from '../services/football.service';
 import { countryLeagueIds } from '../model/countryLeagueId.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-standings',
   templateUrl: './standings.component.html',
   styleUrls: ['./standings.component.css'],
 })
-export class StandingsComponent implements OnInit {
+export class StandingsComponent implements OnInit, OnDestroy {
   isHidden: boolean = true;
   selectedRow: number | null = null;
   selectedCountry: string = '';
-
+  private standingsSubscription: Subscription | undefined;
   standingsReponseData: League = {
     id: 0,
     name: '',
@@ -29,6 +30,12 @@ export class StandingsComponent implements OnInit {
     private router: Router,
     private fbApiService: FootballService
   ) {}
+  ngOnDestroy(): void {
+    // Unsubscribe to prevent memory leaks
+    if (this.standingsSubscription) {
+      this.standingsSubscription.unsubscribe();
+    }
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -36,7 +43,7 @@ export class StandingsComponent implements OnInit {
       const season = new Date().getFullYear();
       const league = countryLeagueIds.get(this.selectedCountry);
 
-      this.fbApiService
+      this.standingsSubscription = this.fbApiService
         .getStandings(league!, season)
         .subscribe((standingData) => {
           this.standingsReponseData = standingData.response[0].league;
