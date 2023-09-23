@@ -1,0 +1,58 @@
+<!-- Display last 10 game results here -->
+
+<div
+  class="container"
+  style="background-color: #f2f2f2; /* or any other color */"
+>
+  <!-- <h5>
+    Last 10 game results for
+    <span style="background-color: blanchedalmond; color: black;">{{
+      teamName
+    }}</span>
+  </h5> -->
+  <div class="table-responsive" *ngIf="fixtureTeamData">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Home Name</th>
+          <th scope="col" style="text-align: center;">Goal Scores Home</th>
+          <th scope="col"></th>
+          <th scope="col" style="text-align: center;">Goal Scores Away</th>
+          <th scope="col">Away Name</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let game of fixtureTeamData.response; let i = index">
+          <td>
+            <img
+              style="width: 15%;height: 15%;"
+              [src]="game.teams.home.logo"
+              alt="{{ game.teams.home.logo }} Logo"
+            />
+          </td>
+
+          <td>{{ game.teams.home.name }}</td>
+          <td style="text-align: center;">{{ game.goals.home }}</td>
+          <td>--</td>
+          <td style="text-align: center;">{{ game.goals.away }}</td>
+          <td>{{ game.teams.away.name }}</td>
+
+          <td>
+            <img
+              style="width: 15%;height: 15%;"
+              [src]="game.teams.away.logo"
+              alt="{{ game.teams.away.logo }} Logo"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Back button to navigate back to league standings -->
+  <br />
+  <button class="btn btn-success" (click)="goBack()">Back to Standings</button>
+  <br /><br />
+</div>

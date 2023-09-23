@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "",
+    "types": [],
+    "target": "es5", // You can keep "es5" as the target
+    "lib": ["es2016", "dom"] // Add "es2016" or later here
+  },
+  "files": ["main.ts", "polyfills.ts"]
+}

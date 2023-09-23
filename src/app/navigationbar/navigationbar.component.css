@@ -1,0 +1,30 @@
+/* Reset default styles */
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the navigation container */
+.navbar {
+  background-color: #908d8d; /* Background color */
+  display: flex;
+  justify-content: space-between; /* Equal spacing between items */
+  padding: 10px 20px; /* Padding for the whole navbar */
+}
+
+/* Style the navigation items (buttons) */
+.navbar button {
+  background-color: transparent; /* Transparent background */
+  border: none; /* Remove borders */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding for each button */
+  cursor: pointer; /* Cursor style */
+  font-size: 16px; /* Font size */
+}
+
+/* Style the current item differently */
+.current {
+  font-weight: bold; /* Bold text for the current item */
+  color: blue !important;
+}

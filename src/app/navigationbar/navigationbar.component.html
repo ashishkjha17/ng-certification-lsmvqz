@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 style="text-align: center;">{{ title | uppercase }}</h1>
+  <div class="navbar">
+    <div *ngFor="let country of countries">
+      <button
+        id="{{ country.name | lowercase }}Select"
+        [routerLink]="['/standings', country.name]"
+        routerLinkActive="current"
+      >
+        {{ country.name }}
+      </button>
+    </div>
+  </div>
+</div>

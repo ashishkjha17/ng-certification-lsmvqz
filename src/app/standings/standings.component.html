@@ -1,0 +1,61 @@
+<div
+  *ngIf="selectedCountry"
+  class="container"
+  style="background-color: #f2f2f2; /* or any other color */"
+>
+  <!-- <span style="background-color: antiquewhite;color: black;font-size: large;">Standings for <b>{{ selectedCountry }}</b></span> -->
+  <!-- Add your standings display logic here -->
+
+  <div class="table-responsive" *ngIf="standingsReponseData">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col">Name</th>
+          <th scope="col">Games</th>
+          <th scope="col">W</th>
+          <th scope="col">L</th>
+          <th scope="col">D</th>
+          <th scope="col" style="text-align: center;">Goal Difference</th>
+          <th scope="col">Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let group of standingsReponseData.standings[0]; let i = index"
+          (click)="
+            selectRow(group.team.id, standingsReponseData.id, group.team.name)
+          "
+          [ngClass]="{
+            'clickable-row': true,
+            'highlighted-row': selectedRow === group.team.id
+          }"
+        >
+          <td scope="row">{{ group.rank }}</td>
+          <td>
+            <img
+              style="width: 15%;height: 15%;"
+              [src]="group.team.logo"
+              alt="{{ group.team.logo }} Logo"
+            />
+          </td>
+
+          <td>{{ group.team.name }}</td>
+          <td>{{ group.all.played }}</td>
+          <td>{{ group.all.win }}</td>
+          <td>{{ group.all.lose }}</td>
+          <td>{{ group.all.draw }}</td>
+          <td style="text-align: center;">{{ group.goalsDiff }}</td>
+          <td>{{ group.points }}</td>
+          <td [hidden]="isHidden">{{ group.team.id }}</td>
+          <td [hidden]="isHidden">{{ standingsReponseData.id }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div *ngIf="!standingsReponseData">
+  Something went wrong. Data is not available.
+</div>
+<!-- standings.component.html -->
