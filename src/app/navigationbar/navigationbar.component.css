@@ -1,30 +1,44 @@
+/* navbar.component.css */
+
 /* Reset default styles */
-body,
-ul {
+body {
   margin: 0;
   padding: 0;
 }
 
-/* Style the navigation container */
+.hidden {
+  display: none;
+}
+
 .navbar {
-  background-color: #908d8d; /* Background color */
+  background-color: rgb(
+    120,
+    130,
+    140,
+    244
+  ); /* Background color for the navbar */
+  padding: 10px;
   display: flex;
-  justify-content: space-between; /* Equal spacing between items */
-  padding: 10px 20px; /* Padding for the whole navbar */
+  justify-content: space-between;
 }
-
-/* Style the navigation items (buttons) */
-.navbar button {
-  background-color: transparent; /* Transparent background */
-  border: none; /* Remove borders */
-  color: white; /* Text color */
-  padding: 10px 20px; /* Padding for each button */
-  cursor: pointer; /* Cursor style */
-  font-size: 16px; /* Font size */
-}
-
-/* Style the current item differently */
 .current {
-  font-weight: bold; /* Bold text for the current item */
-  color: blue !important;
+  color: blue;
+  font-weight: bold;
+  background-color: orange;
+}
+
+button {
+  background-color: #fff; /* Button background color */
+  color: black; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #007bff; /* Button background color on hover */
+  color: #fff; /* Button text color on hover */
 }
