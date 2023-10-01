@@ -11,6 +11,11 @@ import { Subscription } from 'rxjs';
 })
 export class NavigationbarComponent implements OnInit, OnDestroy {
   title: string = 'Football Updates';
+  headingCSS ={
+    'text-align': 'center',
+    'font-size':'xx-large',
+    'color':'goldenrod'
+  };
   // This will hold the list of countries
   countries: Country[] = [];
   private countriesSubscription: Subscription | undefined;

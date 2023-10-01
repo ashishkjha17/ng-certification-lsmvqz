@@ -11,12 +11,7 @@ body {
 }
 
 .navbar {
-  background-color: rgb(
-    120,
-    130,
-    140,
-    244
-  ); /* Background color for the navbar */
+  background-color: #bfc5d1; /* Background color for the navbar */
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -29,8 +24,8 @@ body {
 }
 
 button {
-  background-color: #fff; /* Button background color */
-  color: black; /* Button text color */
+  background-color: #5b84b0; /* Button background color */
+  color: wheat; /* Button text color */
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -40,6 +35,7 @@ button {
 }
 
 button:hover {
-  background-color: #007bff; /* Button background color on hover */
-  color: #fff; /* Button text color on hover */
+  background-color: #fff; /* Button background color on hover */
+  color: black; /* Button text color on hover */
+  font-style: italic;
 }
