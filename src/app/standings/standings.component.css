@@ -1,7 +1,13 @@
-.clickable-row {
-  cursor: pointer;
+
+tr{
+  font-size: larger;
 }
 
 .highlighted-row {
-  background-color: #f0f0f0; /* Change to your desired highlight color */
+  cursor: pointer;
+  background-color: rgb(174, 160, 160); /* Change to your desired highlight color */
+  color: #ff123f;
+  /* font-weight: bold;
+  font-size: larger; */
+ 
 }

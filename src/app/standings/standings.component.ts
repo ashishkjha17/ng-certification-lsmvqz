@@ -14,6 +14,7 @@ export class StandingsComponent implements OnInit, OnDestroy {
   isHidden: boolean = true;
   selectedRow: number | null = null;
   selectedCountry: string = '';
+  isHovered: boolean = false;
   private standingsSubscription: Subscription | undefined;
   standingsReponseData: League = {
     id: 0,
@@ -76,5 +77,16 @@ export class StandingsComponent implements OnInit, OnDestroy {
 
     // Use navigate method with navigation extras
     this.router.navigate(['/app-team-game', routeParams], navigationExtras);
+  }
+  // Event handler for mouse enter
+  onMouseEnter(teamid: number) {
+    this.isHovered = true;
+    this.selectedRow = teamid;
+  }
+
+  // Event handler for mouse leave
+  onMouseLeave() {
+    this.isHovered = false;
+    this.selectedRow = 0;
   }
 }

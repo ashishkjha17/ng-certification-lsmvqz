@@ -27,8 +27,9 @@
           (click)="
             selectRow(group.team.id, standingsReponseData.id, group.team.name)
           "
+          (mouseenter)="onMouseEnter(group.team.id)"
+          (mouseleave)="onMouseLeave()"
           [ngClass]="{
-            'clickable-row': true,
             'highlighted-row': selectedRow === group.team.id
           }"
         >
