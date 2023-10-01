@@ -13,8 +13,9 @@ export class NavigationbarComponent implements OnInit, OnDestroy {
   title: string = 'Football Updates';
   h1CSS = {
     'text-align': 'center',
-    'font-size': 'xx-large',
+    'font-size': 'xxx-large',
     color: 'goldenrod',
+    'font-weight': 'bolder',
   };
 
   // This will hold the list of countries
