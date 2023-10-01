@@ -6,7 +6,10 @@
   <!-- <span style="background-color: antiquewhite;color: black;font-size: large;">Standings for <b>{{ selectedCountry }}</b></span> -->
   <!-- Add your standings display logic here -->
 
-  <div class="table-responsive" *ngIf="standingsReponseData">
+  <div
+    class="table-responsive"
+    *ngIf="standingsReponseData; else inValidResponse"
+  >
     <table class="table">
       <thead>
         <tr>
@@ -56,7 +59,9 @@
     </table>
   </div>
 </div>
-<div *ngIf="!standingsReponseData">
-  Something went wrong. Data is not available.
-</div>
+
+<ng-template #inValidResponse>
+  <p>Something went wrong. Data is not available.</p>
+</ng-template>
+
 <!-- standings.component.html -->
