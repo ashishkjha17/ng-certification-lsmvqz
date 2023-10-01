@@ -1,22 +1,6 @@
-/* Add application styles & imports to this file! */
-
-.flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
+/* styles.css */
 body {
-  padding-top: 10px;
-}
-
-.icon {
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    right: 20px;
-    top: -2px;
+  background-image: url('https://img.freepik.com/free-photo/sports-stadium_1308-4848.jpg?w=1060&t=st=1696161045~exp=1696161645~hmac=2cbf3aa2d1b3aee531f3619c99dfad7417605bfe02aadedeffd3b6627bb41bf1'); /* Replace with your image URL */
+  background-size: cover; /* Adjust the size as needed */
+  background-repeat: no-repeat; /* Prevent image repetition */
 }
