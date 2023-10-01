@@ -1,13 +1,43 @@
+/* navbar.component.css */
 
-tr{
-  font-size: larger;
+/* Reset default styles */
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.highlighted-row {
+.hidden {
+  display: none;
+}
+
+.navbar {
+  background-color: rgb(
+    120,
+    130,
+    140,
+    244
+  ); /* Background color for the navbar */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.current {
+  color: blue;
+  font-weight: bold;
+}
+
+button {
+  background-color: #fff; /* Button background color */
+  color: black; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
-  background-color: rgb(174, 160, 160); /* Change to your desired highlight color */
-  color: #ff123f;
-  /* font-weight: bold;
-  font-size: larger; */
- 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #007bff; /* Button background color on hover */
+  color: #fff; /* Button text color on hover */
 }

@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class TeamGameComponent implements OnInit, OnDestroy {
   teamName: string | null = null;
+  myCustomCssclass = 'myCustomCssclass';
   fixtureTeamData!: TeamGamesResponse; // Define the data structure for team results
   private fixtureTeamDataSubscription: Subscription | undefined;
   constructor(
