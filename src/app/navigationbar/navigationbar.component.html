@@ -36,20 +36,16 @@
 </ng-container> -->
 
 <ng-container>
-  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <div class="container">
-      <h1 [ngStyle]="h1CSS">{{ title | uppercase }}</h1>
-      <div class="navbar">
-        <div *ngFor="let country of countries">
-          <button
-            id="{{ country.name | lowercase }}Select"
-            [routerLink]="['/standings', country.name]"
-            routerLinkActive="current"
-          >
-            {{ country.name }}
-          </button>
-        </div>
-      </div>
+  <h1 [ngStyle]="h1CSS">{{ title | uppercase }}</h1>
+  <div class="navbar container">
+    <div *ngFor="let country of countries">
+      <button
+        id="{{ country.name | lowercase }}Select"
+        [routerLink]="['/standings', country.name]"
+        routerLinkActive="current"
+      >
+        {{ country.name }}
+      </button>
     </div>
-  </nav>
+  </div>
 </ng-container>
