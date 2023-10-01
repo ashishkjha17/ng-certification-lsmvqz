@@ -20,7 +20,7 @@ body {
 .current {
   color: blue;
   font-weight: bold;
-  background-color: orange;
+  background-color: lightcoral;
 }
 
 button {

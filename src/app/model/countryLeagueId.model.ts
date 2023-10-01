@@ -6,13 +6,13 @@ export const countryLeagueIds = new Map<string, number>([
   ['Italy', 135],
 ]);
 
-export const desiredCountries = [
-  'England',
-  'Spain',
-  'France',
-  'Germany',
-  'Italy',
-];
+// export const desiredCountries = [
+//   'England',
+//   'Spain',
+//   'France',
+//   'Germany',
+//   'Italy',
+// ];
 
 // England = Premier League => 39
 // Spain  = La Liga => 140

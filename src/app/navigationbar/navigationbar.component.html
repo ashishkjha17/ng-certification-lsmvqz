@@ -1,8 +1,6 @@
-
-
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-<div class="container">
-  <h1 [ngStyle]="headingCSS">{{ title | uppercase }}</h1>
+<!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+ <div class="container">
+  <h1 [ngStyle]="h1CSS">{{ title | uppercase }}</h1>
   <div class="navbar">
     <div *ngFor="let country of countries">
       <button
@@ -15,4 +13,43 @@
     </div>
   </div>
 </div>
-</nav>
+</nav> -->
+<!-- <ng-template #show>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container">
+     <h1 [ngStyle]="h1CSS">{{ title | uppercase }}</h1>
+     <div class="navbar">
+       <div *ngFor="let country of countries">
+         <button
+           id="{{ country.name | lowercase }}Select"
+           [routerLink]="['/standings', country.name]"
+           routerLinkActive="current"
+         >
+           {{ country.name }}
+         </button>
+       </div>
+     </div>
+   </div>
+   </nav>
+</ng-template>
+<ng-container *ngTemplateOutlet="show; context:countries">
+</ng-container> -->
+
+<ng-container>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container">
+      <h1 [ngStyle]="h1CSS">{{ title | uppercase }}</h1>
+      <div class="navbar">
+        <div *ngFor="let country of countries">
+          <button
+            id="{{ country.name | lowercase }}Select"
+            [routerLink]="['/standings', country.name]"
+            routerLinkActive="current"
+          >
+            {{ country.name }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</ng-container>
