@@ -2,10 +2,14 @@ tr {
   font-size: larger;
 }
 
-.highlighted-row {
+/* .highlighted-row {
   cursor: pointer;
-  background-color: #c0c0c0; /* Change to your desired highlight color */
+  background-color: #c0c0c0;
   color: #ff123f;
-  /* font-weight: bold;
-  font-size: larger; */
+} */
+
+tr:hover{
+  cursor: pointer;
+  background-color: #c0c0c0;
+  color: #ff123f;
 }

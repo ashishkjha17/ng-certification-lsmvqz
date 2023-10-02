@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr
+        <!-- <tr
           *ngFor="let group of standingsReponseData.standings[0]; let i = index"
           (click)="
             selectRow(group.team.id, standingsReponseData.id, group.team.name)
@@ -35,6 +35,12 @@
           [ngClass]="{
             'highlighted-row': selectedRow === group.team.id
           }"
+        > -->
+        <tr
+          *ngFor="let group of standingsReponseData.standings[0]; let i = index"
+          (click)="
+            selectRow(group.team.id, standingsReponseData.id, group.team.name)
+          "
         >
           <td scope="row">{{ group.rank }}</td>
           <td>
